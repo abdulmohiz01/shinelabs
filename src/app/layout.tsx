@@ -1,8 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Red_Hat_Display } from "next/font/google";
+import localfont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const red_hat_display = Red_Hat_Display({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-redhat",
+});
+
+const milk_honey = localfont({
+  src: [
+    {
+      path: "../../public/fonts/MilkHoney.ttf",
+      weight: "300"
+    },
+ 
+  ],
+  variable: "--font-milk-honey",
+});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${red_hat_display.variable} ${milk_honey.variable}`}>{children}</body>
     </html>
   );
 }
