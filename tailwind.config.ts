@@ -17,20 +17,29 @@ const config: Config = {
       md: '680px',
       lg: '1250px',
       xl: '1540px',
-
     },
     extend: {
+      keyframes: {
+        slide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        slide: 'slide 30s linear infinite',  // Adjusted speed
+      },
       colors: {
         primary: '#462B13',
-        secondary: '#FFE1CC', 
+        secondary: '#FFE1CC',
         accent: '#F8AD79',
       },
       fontFamily: {
-        redhat: [`var(--font-redhat)`, 'sans-serif'],
-        milknhoney: [`var(--font-milk-honey)`, 'sans-serif'],
+        redhat: ['var(--font-redhat)', 'sans-serif'],
+        milknhoney: ['var(--font-milk-honey)', 'sans-serif'],
       },
     },
   },
   plugins: [],
 };
+
 export default config;

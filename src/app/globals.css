@@ -9,3 +9,11 @@
     rgba(45, 26, 15, 0.64) 100%
   );
 }
+/* Custom CSS to pause and resume animation on hover */
+.hold-on-hover {
+  animation-play-state: running;
+}
+
+.hold-on-hover:hover {
+  animation-play-state: paused;
+}
