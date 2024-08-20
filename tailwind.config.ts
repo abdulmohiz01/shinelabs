@@ -24,9 +24,16 @@ const config: Config = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
         },
+        cardSlide: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }, // Adjust to ensure the loop continues seamlessly
+        },
       },
       animation: {
-        slide: 'slide 30s linear infinite',  // Adjusted speed
+        slide: 'slide 30s linear infinite',
+        'slide-sm': 'slide 10s linear infinite',
+        cardSlide: 'cardSlide 150s linear infinite', // Adjust the timing as needed
+        'cardSlide-sm': 'cardSlide 80s linear infinite', // Adjust the timing as needed
       },
       colors: {
         primary: '#462B13',
