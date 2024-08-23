@@ -18,7 +18,7 @@ const Info = () => {
         </div>
       </div>
       <div className="flex sm:flex-col lg:flex-row md:py-[40px] gap-[30px] font-redhat md:w-[80%] sm:px-[20px] m-auto">
-        <div className="md:text-[23px] sm:text-[19px]  md:w-[50%] md:h-[560px] sm:h-[480px] sm:order-2 font-[600] flex justify-around flex-col leading-normal md:my-[30px]  ">
+        <div className="md:text-[23px] sm:text-[19px]  md:w-[50%] md:h-[560px] sm:h-[480px] sm:order-2 md:order-1 font-[600] flex justify-around flex-col leading-normal md:my-[30px]  ">
           <p>Recent scientific breakthroughs have identified hormonal imbalances as the chief culprit behind poor sleep—whether it's due to stress, age, lifestyle, or even sleep illnesses like insomnia and sleep apnea.¹</p>
           <p>These factors affect key hormones like serotonin and melatonin, which help us wind down and achieve deep sleep. It gets them out of balance, leaving us restless at night and exhausted by morning.²</p>
           <p>The good news is that getting better quality sleep in general is as simple as balancing these hormones out again. </p>
@@ -26,7 +26,6 @@ const Info = () => {
         <div className="md:w-[50%] overflow-hidden sm:order-1 flex justify-center">
           <Image className="rounded-xl md:h-[623px] md:w-[603px] sm:w-[377px] sm:h-[367px]" src='/sleepingwoman.jpeg' alt='woman sleeping' width={603} height={623} />
         </div>
-
       </div>
     </div>
   )

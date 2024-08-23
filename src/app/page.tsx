@@ -12,6 +12,7 @@ const Home = () => {
       <ProductFeatures />
       <ReviewSlider />
       <Info />
+      <h2>2+2=?</h2>
     </div>
   )
 }
