@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import ProductFeatures from "@/components/productFeatures";
 import ReviewSlider from "@/components/reviewsSlider";
 import Info from "@/components/info";
+import Footer from "@/components/footer";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       <ProductFeatures />
       <ReviewSlider />
       <Info />
-      <h2>2+2=?</h2>
+      <Footer />
     </div>
   )
 }
