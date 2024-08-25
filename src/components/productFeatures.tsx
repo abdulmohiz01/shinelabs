@@ -1,5 +1,7 @@
 'use client'
 import Image from "next/image";
+import CardLoader from "./cardloading";
+import { Suspense } from "react";
 
 const features = [
     {
@@ -72,11 +74,12 @@ const ProductFeatures = () => {
                     <button className="bg-accent text-primary font-[700] md:hidden sm:block font-redhat text-[21px] py-2 px-4 rounded-lg mt-5 hover:bg-accent-dark w-full h-[54px]">Claim Offer Now</button>
                     <p className="sm:flex md:hidden items-center gap-1 text-[14px] font-[600] font-redhat"><Image className="w-[14px] h-[14px]" src='/blackTick.png' alt="black tick" unoptimized width={14} height={14} />
                         30 Day Risk Free Gurantee</p>
-
                 </div>
             </div>
             <div className="sm:w-full md:w-[50%] flex items-center justify-center sm:order-1 md:order-2">
-                <Image className="md:w-[550px] md:h-[588px] sm:w-full sm:h-full" src='/features.png' alt="featured image" width={550} height={588} />
+                <Suspense fallback={<CardLoader/>}>
+                    <Image className="md:w-[550px] md:h-[588px] sm:w-full sm:h-full" src='/features.png' alt="featured image" width={550} height={588} />
+                </Suspense>
             </div>
         </div>
     );

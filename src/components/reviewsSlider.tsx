@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Suspense } from "react";
+import CardLoader from "./cardloading";
 
 const phoneReviews = [
     {
@@ -67,37 +69,39 @@ const ReviewSlider = () => {
             </div>
 
             {/* Card */}
-            <div className="flex gap-3 md:animate-cardSlide sm:animate-cardSlide-sm">
-                {duplicatedCardData.map((card, index) => (
-                    <div key={index} className="md:w-[310px] md:h-[484px] sm:w-[295px] sm:h-[433px] bg-white rounded-3xl md:mt-[50px] px-5 pt-4">
-                        <div className="flex flex-col">
-                            <div className="flex justify-center items-center w-full">
-                                <Image unoptimized src={card.imageUrl} className="rounded-lg w-full md:h-[253px] sm:h-[226px]" width={294} height={253} alt={`${card.name} image`} />
-                            </div>
-                            <div className="flex md:my-1 sm:my-1">
-                                <div className="font-redhat flex items-start flex-col">
-                                    <h3 className="font-[500] text-[17px] sm:text-[15px]">{card.name}</h3>
-                                    <div className="flex items-center w-[200px]">
-                                        <Image src='/greenTick.png' className="mx-1 w-[12px] h-[12px]" alt="green tick" width={12} height={12} />
-                                        <h3 className="text-[#60D6B1] md:text-[12px] sm:text-[10px] font-[700]">Verified Customer</h3>
+            <Suspense fallback={<CardLoader/>}>
+                <div className="flex gap-3 md:animate-cardSlide sm:animate-cardSlide-sm">
+                    {duplicatedCardData.map((card, index) => (
+                        <div key={index} className="md:w-[310px] md:h-[484px] sm:w-[295px] sm:h-[433px] bg-white rounded-3xl md:mt-[50px] px-5 pt-4">
+                            <div className="flex flex-col">
+                                <div className="flex justify-center items-center w-full">
+                                    <Image unoptimized src={card.imageUrl} className="rounded-lg w-full md:h-[253px] sm:h-[226px]" width={294} height={253} alt={`${card.name} image`} />
+                                </div>
+                                <div className="flex md:my-1 sm:my-1">
+                                    <div className="font-redhat flex items-start flex-col">
+                                        <h3 className="font-[500] text-[17px] sm:text-[15px]">{card.name}</h3>
+                                        <div className="flex items-center w-[200px]">
+                                            <Image src='/greenTick.png' className="mx-1 w-[12px] h-[12px]" alt="green tick" width={12} height={12} />
+                                            <h3 className="text-[#60D6B1] md:text-[12px] sm:text-[10px] font-[700]">Verified Customer</h3>
+                                        </div>
+                                    </div>
+                                    <div className="flex mt-[20px]">
+                                        {[...Array(5)].map((_, index) => (
+                                            <Image key={index} src='/reviewStar.png' alt="rating" width={15} height={15} unoptimized className='w-[15px] h-[15px] sm:w-[11px] sm:h-[11px] bottom-[1px]' />
+                                        ))}
                                     </div>
                                 </div>
-                                <div className="flex mt-[20px]">
-                                    {[...Array(5)].map((_, index) => (
-                                        <Image key={index} src='/reviewStar.png' alt="rating" width={15} height={15} unoptimized className='w-[15px] h-[15px] sm:w-[11px] sm:h-[11px] bottom-[1px]' />
-                                    ))}
+                                <div>
+                                    <h2 className="font-redhat md:text-[18px] sm:text-[16px] font-[700]">"{card.title}"</h2>
+                                </div>
+                                <div className="font-redhat font-[700] md:text-[14px] sm:text-[12px]">
+                                    <p>{card.description}</p>
                                 </div>
                             </div>
-                            <div>
-                                <h2 className="font-redhat md:text-[18px] sm:text-[16px] font-[700]">"{card.title}"</h2>
-                            </div>
-                            <div className="font-redhat font-[700] md:text-[14px] sm:text-[12px]">
-                                <p>{card.description}</p>
-                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            </Suspense>
         </div>
     );
 };

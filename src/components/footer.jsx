@@ -23,7 +23,7 @@ const Footer = () => {
               required
               type="email"
               placeholder="Your Email"
-              className="w-[90%] p-2 placeholder-gray-400 placeholder:text-[20px] placeholder:pl-1 placeholder:font-[400] placeholder:font-redhat  label:font-[400] label:font-redhat label:pl-1 label:pt-1 label:pb-1 label:pr-1 focus:outline-none "
+              className="w-[90%] p-2 placeholder-gray-400 md:placeholder:text-[20px] placeholder:pl-1  placeholder:font-redhat  label:font-[400] label:font-redhat placeholder:font-[700] sm:placeholder:text-[15px]  label:pl-1 label:pt-1 label:pb-1 label:pr-1 focus:outline-none "
             />
             <button  className="relative right-2 bg-accent text-white w-[44px] h-[44px] rounded-lg flex justify-center items-center">
               <Image

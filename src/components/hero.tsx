@@ -1,11 +1,15 @@
 import Image from 'next/image';
 import SlidingFeatures from './slidingfeatures';
+import CardLoader from './cardloading';
+import { Suspense } from 'react';
 const Hero = () => {
     return (
         <>
             <div className='hero lg:h-[628px] lg:pt-[100px] md:h-[1000px] sm:p-[20px] sm:h-[728px] sm:flex sm:flex-col lg:flex-row     '>
                 <div className='md:w-[45%] sm:w-full sm:h-[300px] md:h-auto  flex items-center justify-center sm:order-2 sm:overflow-hidden'>
-                    <Image className='relative sm:top-[20px]  md:top-[50px]  ' src='/hero.png' height={746} width={652} alt='hero image' unoptimized />
+                    <Suspense fallback={<CardLoader />}>
+                        <Image className='relative sm:top-[20px]  md:top-[50px]  ' src='/hero.png' height={746} width={652} alt='hero image' unoptimized />
+                    </Suspense>
                 </div>
                 <div className='lg:w-[45%] md:w-full sm:order-1 lg:order-2 sm:w-full flex flex-col md:items-start sm:items-center text-center md:text-left md:pt-[40px] md:gap-3 sm:gap-5 '>
                     <div className=''>
