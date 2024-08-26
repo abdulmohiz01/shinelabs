@@ -147,7 +147,7 @@ const Footer = () => {
           />
         </div>
         <div className="md:w-[500px]">
-          <p className="text-white md:text-[15px] sm:text-[11px] sm:w-[90%] w-full m-auto pt-[10px] font-[500] ">
+          <p className="text-white md:text-[15px] sm:text-[11px] sm:w-[90%] md:w-full m-auto pt-[10px] font-[500] ">
             *These statements have not been evaluated by the FDA. These products
             are not intended to diagnose, cure, prevent, or treat any disease.
           </p>
